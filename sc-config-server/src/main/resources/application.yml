@@ -1,0 +1,13 @@
+server:
+  port: 8999
+
+spring:
+  application:
+    name: sc-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/SolaSJ/SpringCloudConfig/
+          search-paths: config-repo
+          default-label: master

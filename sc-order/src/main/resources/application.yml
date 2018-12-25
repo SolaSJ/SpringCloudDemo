@@ -1,0 +1,19 @@
+server:
+  port: 9005
+
+spring:
+  application:
+    name: sc-order
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  level:
+    com.sola.scorder.client: debug
+
+feign:
+  hystrix:
+    enabled: true
