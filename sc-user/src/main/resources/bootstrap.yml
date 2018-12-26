@@ -1,5 +1,5 @@
 server:
-  port: 9001
+  port: 9002
 
 spring:
   #项目名, 和配置中心配置文件名保持一致
