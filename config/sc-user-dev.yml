@@ -4,3 +4,9 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 
 hello: hello world!
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
