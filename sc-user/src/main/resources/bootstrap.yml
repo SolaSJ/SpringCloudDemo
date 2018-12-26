@@ -1,0 +1,16 @@
+server:
+  port: 9001
+
+spring:
+  #项目名, 和配置中心配置文件名保持一致
+  application:
+    name: sc-user
+  #配置中心
+  cloud:
+    config:
+      label: master
+      profile: dev
+      #uri: http://localhost:10000/
+      discovery:
+        enabled: true
+        service-id: sc-config-server

@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Arrays;
+
 /**
  * @author Sola
  * @date 2018/12/25
@@ -16,10 +18,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/user")
 public class UserController {
 
+    @Value("${hello}")
+    private String hello;
+
     @GetMapping("/{userId}")
-    public String getUser(@PathVariable Long userId) {
-        log.info("{}", userId);
-        return "user 001";
+    public String getUser(@PathVariable Long[] userId) {
+        log.info("{}, {}", hello, Arrays.toString(userId));
+        return hello;
     }
 
 }

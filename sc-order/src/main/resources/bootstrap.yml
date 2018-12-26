@@ -1,0 +1,18 @@
+server:
+  port: 9002
+
+spring:
+  profiles:
+    active: dev
+  #项目名, 和配置中心配置文件名保持一致
+  application:
+    name: sc-order
+  #配置中心
+  cloud:
+    config:
+      label: master
+      profile: dev
+      #uri: http://localhost:10000/
+      discovery:
+        enabled: true
+        service-id: sc-config-server
