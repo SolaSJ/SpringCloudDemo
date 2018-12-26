@@ -1,0 +1,7 @@
+GET http://localhost:9001/user/1
+
+###
+
+POST http://localhost:9001/actuator/refresh
+
+###
