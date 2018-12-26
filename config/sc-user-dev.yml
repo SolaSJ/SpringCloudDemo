@@ -3,7 +3,7 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 
-hello: hello world, config updated again!
+hello: hello world, revert config!
 
 management:
   endpoints:
