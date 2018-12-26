@@ -1,0 +1,12 @@
+server:
+  port: 8881
+
+spring:
+  application:
+    name: test-config
+
+  cloud:
+    config:
+      label: master
+      profile: dev
+      uri: http://localhost:10000/
