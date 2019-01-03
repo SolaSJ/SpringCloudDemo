@@ -7,6 +7,6 @@ management:
   endpoints:
     web:
       exposure:
-        include: refresh, bus-refresh
+        include: refresh, bus-refresh, hystrix.stream
 
 hello: hello world, OK!
