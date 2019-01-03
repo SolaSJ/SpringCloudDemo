@@ -8,7 +8,7 @@ import org.springframework.cloud.openfeign.FeignClient;
  * @author Sola
  * @date 2018/12/25
  */
-@FeignClient(value = "user", fallback = UserServiceHystrix.class)
+@FeignClient(value = "sc-user", fallback = UserServiceHystrix.class)
 public interface UserClient {
 
     @RequestLine("GET /user/1")

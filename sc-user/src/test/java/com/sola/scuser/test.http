@@ -1,11 +1,7 @@
 GET http://localhost:9001/user/1
 
-###
+###刷新配置
 
-GET http://localhost:9002/user/1
-
-###
-
-POST http://localhost:9002/actuator/refresh?destination=sc-user:**
+POST http://localhost:9001/actuator/refresh?destination=sc-user:**
 
 ###
