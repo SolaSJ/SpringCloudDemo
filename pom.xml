@@ -19,6 +19,7 @@
         <module>sc-config-server</module>
         <module>sc-user</module>
         <module>sc-order</module>
+        <module>sc-mail</module>
     </modules>
 
     <properties>
