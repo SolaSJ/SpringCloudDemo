@@ -9,4 +9,4 @@ management:
       exposure:
         include: refresh, bus-refresh
 
-hello: hello world!
+hello: hello world, OK!
