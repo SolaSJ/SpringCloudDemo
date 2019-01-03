@@ -3,10 +3,10 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 
-hello: hello world, update config!
-
 management:
   endpoints:
     web:
       exposure:
         include: refresh, bus-refresh
+
+hello: hello world!
