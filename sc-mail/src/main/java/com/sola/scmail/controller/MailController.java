@@ -1,10 +1,11 @@
 package com.sola.scmail.controller;
 
+import com.sola.scmail.controller.bean.MailBean;
+import com.sola.scmail.service.IMailService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.MailException;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,24 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class MailController {
 
     @Autowired
-    private JavaMailSender javaMailSender;
+    private IMailService mailService;
 
-    @RequestMapping("/sendEmail")
-    @ResponseBody
-    public boolean sendEmail() {
-        SimpleMailMessage msg = new SimpleMailMessage();
-        msg.setFrom("solasj@qq.com");
-        msg.setBcc();
-        msg.setTo("jie.su@karakal.com.cn");
-        msg.setSubject("Java技术栈投稿");
-        msg.setText("技术分享");
-        try {
-            javaMailSender.send(msg);
-        } catch (MailException ex) {
-            System.err.println(ex.getMessage());
-            return false;
-        }
-        return true;
+    @PostMapping("/email")
+    public boolean sendEmail(@RequestBody @Validated MailBean mailBean) {
+        return mailService.sendEmail(mailBean);
     }
 
 }

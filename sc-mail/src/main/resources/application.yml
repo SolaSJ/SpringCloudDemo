@@ -1,0 +1,16 @@
+server:
+  port: 9003
+
+spring:
+  application:
+    name: sc-mail
+  mail:
+    host: smtp.qq.com
+    username: solasj@qq.com
+    password: fhqduzyzfdhfbedg
+    default-encoding: UTF-8
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
