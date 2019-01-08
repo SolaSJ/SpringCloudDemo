@@ -32,6 +32,12 @@ spring:
     sampler:
       percentage: 1.0
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, bus-refresh, hystrix.stream
+
 # 自定义配置
 mail:
   sender: solasj@qq.com

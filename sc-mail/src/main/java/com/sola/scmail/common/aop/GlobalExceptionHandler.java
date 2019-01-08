@@ -32,12 +32,13 @@ import java.util.stream.Collectors;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    @Value("${spring.mail.username}")
+    @Value("${mail.sender}")
     private String mailSender;
+    @Value("${mail.receiver}")
+    private String[] mailReceiver;
+
     @Autowired
     private IMailService mailService;
-
-    private final String[] mailReceiver = {"jie.su@karakal.com.cn"};
 
     @SuppressWarnings("Duplicates")
     @ExceptionHandler(Exception.class)

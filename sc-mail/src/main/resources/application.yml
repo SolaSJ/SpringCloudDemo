@@ -24,4 +24,9 @@ management:
   endpoints:
     web:
       exposure:
-        include: refresh, bus-refresh, hystrix.stream, turbine.stream
+        include: refresh, bus-refresh, hystrix.stream
+
+# 自定义配置
+mail:
+  sender: solasj@qq.com
+  receiver: jie.su@karakal.com.cn, solasj@qq.com

@@ -17,5 +17,6 @@ server:
 turbine:
   aggregator:
     cluster-config: default
-  cluster-name-expression: new String("default")
-  app-config: sc-order, sc-mail, sc-user
+  cluster-name-expression: "'default'"
+  app-config: sc-mail, sc-order
+  combine-host-port: true

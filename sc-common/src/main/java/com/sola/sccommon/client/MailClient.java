@@ -2,6 +2,8 @@ package com.sola.sccommon.client;
 
 import com.sola.sccommon.bean.param.MailBean;
 import com.sola.sccommon.bean.ResponseMessage;
+import com.sola.sccommon.hystrix.MailServiceHystrix;
+import com.sola.sccommon.hystrix.UserServiceHystrix;
 import com.sola.sccommon.icontroller.mail.IMailController;
 import feign.RequestLine;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -10,7 +12,7 @@ import org.springframework.cloud.openfeign.FeignClient;
  * @author Sola
  * @date 2019/01/08
  */
-@FeignClient(value = "sc-mail")
+@FeignClient(value = "sc-mail", fallback = MailServiceHystrix.class)
 public interface MailClient extends IMailController {
 
     /**
