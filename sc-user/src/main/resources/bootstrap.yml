@@ -30,3 +30,8 @@ spring:
   sleuth:
     sampler:
       probability: 1
+
+# 自定义配置
+mail:
+  sender: solasj@qq.com
+  receiver: jie.su@karakal.com.cn, solasj@qq.com

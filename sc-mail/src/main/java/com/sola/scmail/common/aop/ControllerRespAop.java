@@ -1,8 +1,8 @@
 package com.sola.scmail.common.aop;
 
 import com.alibaba.fastjson.JSON;
-import com.sola.scmail.common.bean.ResponseMessage;
-import com.sola.scmail.common.bean.ResultBean;
+import com.sola.sccommon.bean.ResponseMessage;
+import com.sola.sccommon.bean.ResultBean;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.http.server.ServerHttpRequest;
@@ -27,6 +27,7 @@ public class ControllerRespAop implements ResponseBodyAdvice<Object> {
     }
 
     @Override
+    @SuppressWarnings("Duplicates")
     public Object beforeBodyWrite(Object o, MethodParameter methodParameter, MediaType mediaType, Class aClass, ServerHttpRequest serverHttpRequest, ServerHttpResponse serverHttpResponse) {
         if (o instanceof ResultBean) {
             ResultBean rb = (ResultBean) o;
@@ -36,7 +37,7 @@ public class ControllerRespAop implements ResponseBodyAdvice<Object> {
 
         // 处理controller返回为字符串时, 转换报异常的bug
         if (o instanceof String) {
-            return new ResponseMessage(JSON.toJSONString(o));
+            return JSON.toJSONString(new ResponseMessage((String) o));
         }
 
         return o;

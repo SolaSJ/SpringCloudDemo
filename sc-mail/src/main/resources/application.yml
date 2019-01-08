@@ -14,3 +14,14 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+
+feign:
+  hystrix:
+    # 开启hystrix的熔断回调
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, bus-refresh, hystrix.stream, turbine.stream

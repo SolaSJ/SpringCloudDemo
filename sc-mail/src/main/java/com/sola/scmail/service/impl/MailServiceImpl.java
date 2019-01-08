@@ -1,6 +1,6 @@
 package com.sola.scmail.service.impl;
 
-import com.sola.scmail.controller.bean.MailBean;
+import com.sola.sccommon.bean.param.MailBean;
 import com.sola.scmail.service.IMailService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;

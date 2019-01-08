@@ -1,0 +1,21 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, bus-refresh, hystrix.stream, turbine.stream
+
+spring:
+  application:
+    name: turbine
+server:
+  port: 2002
+turbine:
+  aggregator:
+    cluster-config: default
+  cluster-name-expression: new String("default")
+  app-config: sc-order, sc-mail, sc-user

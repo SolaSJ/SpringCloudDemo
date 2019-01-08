@@ -1,5 +1,5 @@
 #
-POST localhost:9003/email
+POST localhost:9003/mail
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json

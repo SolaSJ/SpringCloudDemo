@@ -1,6 +1,6 @@
 package com.sola.scmail.service;
 
-import com.sola.scmail.controller.bean.MailBean;
+import com.sola.sccommon.bean.param.MailBean;
 
 /**
  * @author Sola

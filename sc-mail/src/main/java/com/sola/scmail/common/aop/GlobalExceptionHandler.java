@@ -1,8 +1,9 @@
 package com.sola.scmail.common.aop;
 
-import com.sola.scmail.common.bean.ResultBean;
-import com.sola.scmail.common.consts.Operator;
-import com.sola.scmail.controller.bean.MailBean;
+import com.sola.sccommon.bean.param.MailBean;
+import com.sola.sccommon.bean.ResultBean;
+import com.sola.sccommon.consts.Operator;
+import com.sola.sccommon.exception.ScMailException;
 import com.sola.scmail.service.IMailService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +39,7 @@ public class GlobalExceptionHandler {
 
     private final String[] mailReceiver = {"jie.su@karakal.com.cn"};
 
+    @SuppressWarnings("Duplicates")
     @ExceptionHandler(Exception.class)
     public Object globalHandleException(Exception e) {
         HttpStatus httpStatus;
@@ -53,7 +55,7 @@ public class GlobalExceptionHandler {
             message = "参数检验异常, " + Optional.of(allErrors).orElse(Collections.emptyList())
                     .stream().map(DefaultMessageSourceResolvable::getDefaultMessage).collect(Collectors.joining(Operator.COMMA));
             httpStatus = HttpStatus.BAD_REQUEST;
-        } else if (e instanceof MailException) {
+        } else if (e instanceof ScMailException) {
             message = "发送邮件异常, " + e.getMessage();
             httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
         } else {
