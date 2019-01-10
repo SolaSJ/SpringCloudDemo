@@ -1,0 +1,1 @@
+http://localhost:9000/sc-turbine/hystrix/monitor?stream=http://localhost:8763/turbine.stream
