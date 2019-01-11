@@ -8,8 +8,7 @@ Content-Type: application/json
   "from": "solasj@qq.com",
   "text": "hello world! hello world! hello world! hello world!",
   "to": [
-    "solasj@qq.com",
-    ""
+    "solasj@qq.com"
   ],
   "subject": "hello world!"
 }

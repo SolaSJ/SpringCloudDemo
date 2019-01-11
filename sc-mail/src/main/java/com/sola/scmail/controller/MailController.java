@@ -27,7 +27,7 @@ public class MailController implements IMailController {
     @Override
     @GetMapping("/mail/1")
     public ResponseMessage getMail() {
-        return userClient.getUser();
+        return new ResponseMessage("this is a email");
     }
 
     @Override

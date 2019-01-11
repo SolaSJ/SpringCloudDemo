@@ -21,7 +21,7 @@
         <module>sc-order</module>
         <module>sc-mail</module>
         <module>sc-common</module>
-        <module>sc-dashboard</module>
+        <module>sc-turbine</module>
     </modules>
 
     <properties>
@@ -76,15 +76,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
     <repositories>
         <repository>
