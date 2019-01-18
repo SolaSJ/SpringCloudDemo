@@ -1,0 +1,32 @@
+version: '3.3'
+
+services:
+  sc-registry:
+    image: sc-registry
+    ports:
+      - "8761:8761"
+
+  sc-config-server:
+    image: sc-config-server
+    ports:
+      - "8762:8762"
+
+  sc-proxy:
+    image: sc-proxy
+    ports:
+      - "9000:9000"
+
+  sc-user:
+    image: sc-user
+    ports:
+      - "9001:9001"
+
+  sc-order:
+    image: sc-order
+    ports:
+      - "9002:9002"
+
+  sc-mail:
+    image: sc-mail
+    ports:
+      - "9003:9003"
