@@ -23,4 +23,9 @@ public class MailServiceHystrix implements MailClient {
         return false;
     }
 
+    @Override
+    public boolean sendTopic(String msg) {
+        return false;
+    }
+
 }

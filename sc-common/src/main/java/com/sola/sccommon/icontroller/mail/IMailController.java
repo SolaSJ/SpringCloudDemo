@@ -13,4 +13,6 @@ public interface IMailController {
 
     boolean sendEmail(MailBean mailBean);
 
+    boolean sendTopic(String msg);
+
 }

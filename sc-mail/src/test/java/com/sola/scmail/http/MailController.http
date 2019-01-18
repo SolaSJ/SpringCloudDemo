@@ -1,4 +1,5 @@
-#
+###
+
 POST localhost:9003/mail
 Accept: */*
 Cache-Control: no-cache
@@ -12,5 +13,19 @@ Content-Type: application/json
   ],
   "subject": "hello world!"
 }
+
+###
+
+GET localhost:9003/mail/1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+###
+
+POST localhost:9003/topic/123
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
 
 ###
