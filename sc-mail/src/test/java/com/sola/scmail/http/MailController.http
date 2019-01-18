@@ -23,7 +23,7 @@ Content-Type: application/json
 
 ###
 
-POST localhost:9003/topic/123
+POST localhost:9003/topic/hello world!
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json

@@ -1,7 +1,7 @@
-package com.sola.scmail.kafka.consumer;
+package com.sola.scmail.kafka;
 
 import com.alibaba.fastjson.JSON;
-import com.sola.scmail.kafka.KafkaMessage;
+import com.sola.sccommon.kafka.KafkaMessage;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;

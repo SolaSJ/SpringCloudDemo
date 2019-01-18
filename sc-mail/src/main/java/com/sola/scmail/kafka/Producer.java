@@ -1,8 +1,7 @@
-package com.sola.scmail.kafka.producer;
+package com.sola.scmail.kafka;
 
-import com.alibaba.fastjson.JSON;
-import com.sola.scmail.kafka.KafkaMessage;
-import com.sola.scmail.kafka.TopicConsts;
+import com.sola.sccommon.kafka.KafkaMessage;
+import com.sola.sccommon.kafka.TopicConsts;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
@@ -18,12 +17,15 @@ import java.util.UUID;
 public class Producer {
 
     @Autowired
-    private KafkaTemplate kafkaTemplate;
+    private KafkaTemplate<String, KafkaMessage> kafkaTemplate;
 
     public void send(String msg) {
-        KafkaMessage message = KafkaMessage.builder().id("_" + UUID.randomUUID().toString())
+        KafkaMessage<String> message = new KafkaMessage<String>()
+                .builder()
+                .id(UUID.randomUUID().toString())
                 .msg(msg)
-                .sendTime(LocalDateTime.now()).build();
+                .sendTime(LocalDateTime.now())
+                .build();
         kafkaTemplate.send(TopicConsts.TEST_TOPIC, message);
     }
 

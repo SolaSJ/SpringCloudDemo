@@ -4,7 +4,7 @@ import com.sola.sccommon.bean.param.MailBean;
 import com.sola.sccommon.client.UserClient;
 import com.sola.sccommon.bean.ResponseMessage;
 import com.sola.sccommon.icontroller.mail.IMailController;
-import com.sola.scmail.kafka.producer.Producer;
+import com.sola.scmail.kafka.Producer;
 import com.sola.scmail.service.IMailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;

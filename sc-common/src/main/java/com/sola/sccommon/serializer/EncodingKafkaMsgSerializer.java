@@ -8,7 +8,6 @@ import java.util.Map;
  * @author Sola
  * @date 2019/01/18
  */
-
 public class EncodingKafkaMsgSerializer implements Serializer<Object> {
 
     @Override

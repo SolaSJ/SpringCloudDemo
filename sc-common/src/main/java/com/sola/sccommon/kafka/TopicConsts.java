@@ -1,4 +1,4 @@
-package com.sola.scmail.kafka;
+package com.sola.sccommon.kafka;
 
 /**
  * @author Sola
