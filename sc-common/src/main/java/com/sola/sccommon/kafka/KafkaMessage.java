@@ -1,6 +1,5 @@
 package com.sola.sccommon.kafka;
 
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
