@@ -1,0 +1,19 @@
+server:
+  port: 18762
+
+spring:
+  application:
+    name: sc-config-server
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://github.com/SolaSJ/SpringCloudDemo
+          searchPaths: /config
+
+eureka:
+  client:
+    serviceUrl:
+      # docker部署时使用镜像名作为eureka的主机地址
+      defaultZone: http://sc-registry:18761/eureka/

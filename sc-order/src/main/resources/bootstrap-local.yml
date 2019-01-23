@@ -1,0 +1,44 @@
+server:
+  port: 9002
+  undertow:
+    # 设置IO线程数, 它主要执行非阻塞的任务,它们会负责多个连接, 默认设置每个CPU核心一个线程
+    io-threads: 4
+    # 阻塞任务线程池, 当执行类似servlet请求阻塞操作, undertow会从这个线程池中取得线程,它的值设置取决于系统的负载
+    worker-threads: 20
+    # 以下的配置会影响buffer,这些buffer会用于服务器连接的IO操作,有点类似netty的池化内存管理
+    # 每块buffer的空间大小,越小的空间被利用越充分
+    buffer-size: 1024
+    # 每个区分配的buffer数量 , 所以pool的大小是buffer-size * buffers-per-region
+    # buffers-per-region: 1024
+    # 是否分配的直接内存
+    direct-buffers: true
+
+spring:
+  # 项目名, 和配置中心配置文件名保持一致
+  application:
+    name: sc-order
+  # 配置中心
+  cloud:
+    config:
+      label: master
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: sc-config-server
+  # zipkin配置
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      percentage: 1.0
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, bus-refresh, hystrix.stream
+
+# 自定义配置
+mail:
+  sender: solasj@qq.com
+  receiver: jie.su@karakal.com.cn, solasj@qq.com

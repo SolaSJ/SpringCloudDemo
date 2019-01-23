@@ -1,9 +1,8 @@
 package com.sola.sccommon.client;
 
-import com.sola.sccommon.bean.param.MailBean;
 import com.sola.sccommon.bean.ResponseMessage;
+import com.sola.sccommon.bean.param.MailBean;
 import com.sola.sccommon.hystrix.MailServiceHystrix;
-import com.sola.sccommon.hystrix.UserServiceHystrix;
 import com.sola.sccommon.icontroller.mail.IMailController;
 import feign.RequestLine;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -33,5 +32,15 @@ public interface MailClient extends IMailController {
     @Override
     @RequestLine("POST /mail")
     boolean sendEmail(MailBean mailBean);
+
+    /**
+     * 发送消息
+     *
+     * @param msg
+     * @return
+     */
+    @Override
+    @RequestLine("POST /topic/{msg}")
+    boolean sendTopic(String msg);
 
 }
